@@ -13,3 +13,4 @@ jobs:
           docker run -it --rm -d -p 8080:80 --name web testimage
           sleep 5
           docker container ls
+          curl "http://localhost:8080/"
