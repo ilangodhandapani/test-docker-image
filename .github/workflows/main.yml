@@ -11,6 +11,6 @@ jobs:
         run: |
           docker build -t testimage .
           docker run -it --rm -d -p 8080:80 --name web testimage
-          sleep 5
-          docker container ls
+      - name: Test container
+        run: |
           curl "http://localhost:8080/statusfile"
