@@ -10,4 +10,5 @@ jobs:
       - name: Install dependencies
         run: |
           docker build -t testimage .
-          docker images
+          docker run -dit --name test-cont -p 80:80 testimage
+          curl "http://localhost"
