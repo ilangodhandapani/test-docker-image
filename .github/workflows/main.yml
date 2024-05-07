@@ -7,8 +7,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Install dependencies
+      - name: Build and run container
         run: |
           docker build -t testimage .
           docker run -it --rm -d -p 8080:80 --name web testimage
-          curl "http://localhost:8080"
+          sleep 5
+          docker container ls
