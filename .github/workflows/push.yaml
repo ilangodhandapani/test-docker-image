@@ -25,5 +25,5 @@ jobs:
         GOOGLE_PROJECT: ${{ secrets.GOOGLE_PROJECT }}
       run: |
         gcloud auth configure-docker us-east1-docker.pkg.dev
-        docker build -t us-east1-docker.pkg.dev/flawless-lacing-392113/myapp/nginx:latest .
-        docker push us-east1-docker.pkg.dev/flawless-lacing-392113/myapp/nginx:latest
+        docker build -t us-east1-docker.pkg.dev/$GOOGLE_PROJECT/mypp/nginx:latest .
+        docker push us-east1-docker.pkg.dev/$GOOGLE_PROJECT/mypp/nginx:latest
