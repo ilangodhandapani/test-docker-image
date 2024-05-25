@@ -22,13 +22,11 @@ jobs:
       uses: google-github-actions/setup-gcloud@v2
       with:
         project_id: ${{ secrets.GOOGLE_PROJECT }}
-        service_account_key: ${{ secrets.GCP_CREDENTIALS }}
-        export_default_credentials: true
 
     - name: build and push the docker image
       env:
         GOOGLE_PROJECT: ${{ secrets.GOOGLE_PROJECT }}
       run: |
         gcloud auth configure-docker us-east1-docker.pkg.dev
-        docker build -t us-east1-docker.pkg.dev/$GOOGLE_PROJECT/mypp/nginx:latest .
-        docker push us-east1-docker.pkg.dev/$GOOGLE_PROJECT/mypp/nginx:latest
+        docker build -t us-east1-docker.pkg.dev/$GOOGLE_PROJECT/my-app-repo/nginx:latest .
+        docker push us-east1-docker.pkg.dev/$GOOGLE_PROJECT/my-app-repo/nginx:latest
