@@ -28,3 +28,4 @@ jobs:
           gcloud auth configure-docker us-east1-docker.pkg.dev
           docker build -t us-east1-docker.pkg.dev/$GOOGLE_PROJECT/demo/nginx:latest .
           docker push us-east1-docker.pkg.dev/$GOOGLE_PROJECT/demo/nginx:latest
+          
